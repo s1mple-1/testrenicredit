@@ -14,7 +14,12 @@
         <maven.surefire.version>2.22.2</maven.surefire.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.maven.version>2.10.0</allure.maven.version>
-        <aspectj.version>1.8.10</aspectj.version>
+        <aspectj.version>1.9.5</aspectj.version>
+        <selenium.java.version>3.141.59</selenium.java.version>
+        <junit.version>4.13</junit.version>
+        <cucumber.java.version>5.6.0</cucumber.java.version>
+        <cucumber.junit.version>5.6.0</cucumber.junit.version>
+        <allure.cucumber5.jvm>2.13.3</allure.cucumber5.jvm>
     </properties>
 
     <build>
@@ -58,37 +63,37 @@
 
 
     <dependencies>
-
+        <!--  selenium-java  -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.141.59</version>
+            <version>${selenium.java.version}</version>
         </dependency>
-
+        <!--  junit  -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13</version>
+            <version>${junit.version}</version>
         </dependency>
-
+        <!--  cucumber-java  -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>5.2.0</version>
+            <version>${cucumber.java.version}</version>
             <scope>compile</scope>
         </dependency>
-
+        <!--  cucumber-junit  -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>5.2.0</version>
+            <version>${cucumber.junit.version}</version>
             <scope>test</scope>
         </dependency>
-
+        <!--  allure-cucumber5-jvm  -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber5-jvm</artifactId>
-            <version>2.13.3</version>
+            <version>${allure.cucumber5.jvm}</version>
         </dependency>
     </dependencies>
 </project>

@@ -2,7 +2,6 @@ package testrenicredit.defsteps;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.When;
-import io.qameta.allure.Attachment;
 import testrenicredit.steps.ContributionsPageSteps;
 import testrenicredit.steps.MainPageSteps;
 import testrenicredit.utils.AllureUtils;
@@ -25,13 +24,11 @@ public class DefSteps {
         contributionsPageSteps.fillFields(dataTable.asMap(String.class, String.class));
     }
 
-    @Attachment
     @When("Выбираем опцию")
     public void chooseOptions() {
         AllureUtils.takeScreenshot();
         contributionsPageSteps.chooseOptions();
     }
-
 
     @When("Проверяем поля результатов калькулятора вкладов")
     public void checking(DataTable dataTable) {
