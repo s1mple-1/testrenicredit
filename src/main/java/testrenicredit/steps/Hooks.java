@@ -1,5 +1,7 @@
 package testrenicredit.steps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -11,11 +13,12 @@ import testrenicredit.utils.TestProperties;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class BaseSteps {
+public class Hooks {
     private static WebDriver webDriver;
     public static WebDriverWait webDriverWait;
     public static Actions actions;
 
+    @Before
     public static void setUp() {
         Properties properties = TestProperties.getInstance().getProperties();
 
@@ -48,6 +51,8 @@ public class BaseSteps {
         webDriver.get("https://rencredit.ru");
     }
 
+
+    @After
     public static void tearDown() {
         webDriver.quit();
     }

@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        glue = {"testrenicredit.defsteps"},
+        glue = {"testrenicredit.steps"},
         features = {"src/test/resources/"}
 )
 public class CucumberRunnerTest {}

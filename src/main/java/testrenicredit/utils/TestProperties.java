@@ -11,7 +11,7 @@ public class TestProperties {
 
     private TestProperties() {
         try {
-            properties.load(new FileInputStream(new File("src/test/resources/opera.properties")));
+            properties.load(new FileInputStream(new File("src/test/resources/"+System.getProperty("prop")+ ".properties")));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -20,6 +20,7 @@
         <cucumber.java.version>5.6.0</cucumber.java.version>
         <cucumber.junit.version>5.6.0</cucumber.junit.version>
         <allure.cucumber5.jvm>2.13.3</allure.cucumber5.jvm>
+        <gherkin.version>5.1.0</gherkin.version>
     </properties>
 
     <build>
@@ -39,7 +40,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-                        -Dcucumber.options="--plugin io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"
+                        -Dcucumber.options="--plugin io.qameta.AllureCucumber5Jvm"
                     </argLine>
                 </configuration>
                 <dependencies>
@@ -94,6 +95,12 @@
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-cucumber5-jvm</artifactId>
             <version>${allure.cucumber5.jvm}</version>
+        </dependency>
+        <!--  gherkin  -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>gherkin</artifactId>
+            <version>${gherkin.version}</version>
         </dependency>
     </dependencies>
 </project>
