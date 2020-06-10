@@ -10,28 +10,28 @@ public class DefSteps {
     ContributionsPageSteps contributionsPageSteps = new ContributionsPageSteps();
 
     @When("Переходим на страницу Вклады")
-    public void go() {
+    public void goToContributionsPage() {
         new MainPageSteps().goToContributionsPage();
     }
 
     @When("Выбираем валюту {string}")
-    public void chooseCurrency(String code) {
+    public void chooseCurrencyByCode(String code) {
         contributionsPageSteps.chooseCurrencyByCode(code);
     }
 
     @When("Заполняем поля калькулятора вкладов")
-    public void filling(DataTable dataTable) {
+    public void fillFields(DataTable dataTable) {
         contributionsPageSteps.fillFields(dataTable.asMap(String.class, String.class));
     }
 
-    @When("Выбираем опцию")
-    public void chooseOptions() {
+    @When("Выбираем опцию {string}")
+    public void chooseOptions(String checkBoxName) {
         AllureUtils.takeScreenshot();
-        contributionsPageSteps.chooseOptions();
+        contributionsPageSteps.chooseOptions(checkBoxName);
     }
 
     @When("Проверяем поля результатов калькулятора вкладов")
-    public void checking(DataTable dataTable) {
+    public void checkFields(DataTable dataTable) {
         contributionsPageSteps.checkFields(dataTable.asMap(String.class, String.class));
     }
 

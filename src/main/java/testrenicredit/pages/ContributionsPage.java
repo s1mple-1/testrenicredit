@@ -26,6 +26,9 @@ public class ContributionsPage extends BasePage {
     @FindBy(xpath = "//span[text()='Ежемесячная капитализация']")
     private WebElement capitalizationCheckBox;
 
+    @FindBy(xpath = "//span[text()='Частичное снятие']")
+    private WebElement withdrawCheckBox;
+
     @FindBy(xpath = "//span[@class='js-calc-earned']")
     private WebElement earnedCheckElement;
 
@@ -81,9 +84,17 @@ public class ContributionsPage extends BasePage {
         waitElementRefreshing(resultCheckField);
     }
 
-    public void choseCheckBox() {
-        clickToElement(capitalizationCheckBox);
-        waitElementRefreshing(resultCheckField);
+    public void choseCheckBox(String checkBoxName) {
+        switch (checkBoxName) {
+            case "Ежемесячная капитализация":
+                clickToElement(capitalizationCheckBox);
+                waitElementRefreshing(resultCheckField);
+                break;
+            case "Частичное снятие":
+                clickToElement(withdrawCheckBox);
+                waitElementRefreshing(resultCheckField);
+                break;
+        }
     }
 
     public void checkCalculatorResults(String fieldName, String value) {

@@ -1,8 +1,6 @@
 package testrenicredit.steps;
 
-import io.qameta.allure.Attachment;
 import testrenicredit.pages.ContributionsPage;
-import testrenicredit.utils.AllureUtils;
 
 import java.util.Map;
 
@@ -25,9 +23,9 @@ public class ContributionsPageSteps {
         contributionsPage.fillFields(fieldName, value);
     }
 
-    public void chooseOptions() {
+    public void chooseOptions(String checkBoxName) {
         ContributionsPage contributionsPage = new ContributionsPage();
-        contributionsPage.choseCheckBox();
+        contributionsPage.choseCheckBox(checkBoxName);
     }
 
 
