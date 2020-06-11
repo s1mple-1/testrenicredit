@@ -1,6 +1,7 @@
 package testrenicredit.pages;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -56,7 +57,7 @@ public class ContributionsPage extends BasePage {
         }
     }
 
-    public void fillFields(String fieldName, String value) {
+    public void fillField(String fieldName, String value) {
         switch (fieldName) {
             case "Сумма вклада":
                 fillField(amountField, value);
@@ -79,7 +80,7 @@ public class ContributionsPage extends BasePage {
     private void fillDate(String value) {
         clickToElement(countOfMonthField);
         String xPath = String.format("//li[text()='%s месяцев']", value);
-        WebElement currentDate = findElement(xPath);
+        WebElement currentDate = findElement(By.xpath(xPath));
         currentDate.click();
         waitElementRefreshing(resultCheckField);
     }

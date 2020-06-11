@@ -19,8 +19,8 @@ class BasePage {
         webElement.click();
     }
 
-    WebElement findElement(String xpath) {
-        return Hooks.getWebDriver().findElement(By.xpath(xpath));
+    WebElement findElement(By by) {
+        return Hooks.getWebDriver().findElement(by);
     }
 
     void moveToElement(WebElement webElement) {

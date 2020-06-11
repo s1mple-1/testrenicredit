@@ -5,13 +5,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+
 public class TestProperties {
     private Properties properties = new Properties();
     private static TestProperties INSTANCE = null;
 
     private TestProperties() {
         try {
-            properties.load(new FileInputStream(new File("src/test/resources/"+System.getProperty("prop")+ ".properties")));
+            properties.load(new FileInputStream(new File("src/test/resources/" + (System.getProperty("prop") == null ? "chrome" : System.getProperty("prop")) + ".properties")));
         } catch (IOException e) {
             e.printStackTrace();
         }
