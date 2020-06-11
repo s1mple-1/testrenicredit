@@ -57,7 +57,7 @@ public class ContributionsPage extends BasePage {
         }
     }
 
-    public void fillField(String fieldName, String value) {
+    public void fillFields(String fieldName, String value) {
         switch (fieldName) {
             case "Сумма вклада":
                 fillField(amountField, value);

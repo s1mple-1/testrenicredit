@@ -17,7 +17,7 @@ public class ContributionsPageSteps {
     public void fillFields(DataTable dataTable) {
         ContributionsPage contributionsPage = new ContributionsPage();
         dataTable.asMap(String.class, String.class)
-                .forEach((field, value) -> contributionsPage.fillField((String) field, (String) value));
+                .forEach((field, value) -> contributionsPage.fillFields((String) field, (String) value));
 
     }
 
